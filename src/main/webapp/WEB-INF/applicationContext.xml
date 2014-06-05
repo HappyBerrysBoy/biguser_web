@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ 
+	<!-- 1. dataSource 생성 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@000.000.000.000:1521:orcl"></property>
+		<property name="username" value="XXXXX"></property>
+		<property name="password" value="YYYYY"></property>
+	</bean>
+
+	<!-- 2. ibatis 코딩을 지원해주는 SqlMapClient 빈 생성
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="/WEB-INF/SqlMapConfig.xml"></property>
+	</bean> -->
+
+
+	<!-- 3. 공통 빈 생성  - 그외의 빈은  myHome02-servlet.xml에서 설정 -->
+ 
+ 
+</beans>
